@@ -20,15 +20,17 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-        - WATCHTOWER_NOTIFICATIONS=email
-        - WATCHTOWER_NOTIFICATION_EMAIL_FROM=support@qisolutions.co.za
-        - WATCHTOWER_NOTIFICATION_EMAIL_TO=ohiageorge@gmail.com
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=mail.smtp2go.com
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=QISolutions
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=PPIPsxEizqZnUkk1
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=25
-        - WATCHTOWER_NOTIFICATION_EMAIL_DELAY=2
+        # - WATCHTOWER_NOTIFICATIONS=email
+        # - WATCHTOWER_NOTIFICATION_EMAIL_FROM=support@qisolutions.co.za
+        # - WATCHTOWER_NOTIFICATION_EMAIL_TO=ohiageorge@gmail.com
+        # - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=mail.smtp2go.com
+        # - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=QISolutions
+        # - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=PPIPsxEizqZnUkk1
+        # - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=25
+        # - WATCHTOWER_NOTIFICATION_EMAIL_DELAY=2
+        - WATCHTOWER_CLEANUP=true
     command: --interval 30 etdp-qa
+    restart: unless-stopped
   #   networks:
   #     - watchtower
   # networks:
