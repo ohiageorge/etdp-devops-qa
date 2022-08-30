@@ -14,12 +14,12 @@ services:
     ports:
       - "8069:8069"
 
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   container_name: watchtower
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   environment:
         # - WATCHTOWER_NOTIFICATIONS=email
         # - WATCHTOWER_NOTIFICATION_EMAIL_FROM=support@qisolutions.co.za
         # - WATCHTOWER_NOTIFICATION_EMAIL_TO=ohiageorge@gmail.com
@@ -28,9 +28,10 @@ services:
         # - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=PPIPsxEizqZnUkk1
         # - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=25
         # - WATCHTOWER_NOTIFICATION_EMAIL_DELAY=2
-        - WATCHTOWER_CLEANUP=true
-    command: --interval 30 etdp-qa
-    restart: unless-stopped
+        # - WATCHTOWER_CLEANUP=true
+        # -WATCHTOWER_MONITOR_ONLY=true
+    # command: --interval 30 etdp-qa
+    # restart: unless-stopped
   #   networks:
   #     - watchtower
   # networks:
