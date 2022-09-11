@@ -13,6 +13,10 @@ services:
     image: index.docker.io/ohiageorge/odoo-etdp-qa:latest
     ports:
       - "8069:8069"
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./etc:/etc/odoo
+      - ./addons:/mnt/extra-addons
 
   # watchtower:
   #   image: containrrr/watchtower
@@ -37,4 +41,6 @@ services:
   # networks:
   #   watchtower:
   #     external: false
+volumes:
+  odoo-data:
 
