@@ -15,8 +15,6 @@ services:
       - "8069:8069"
     volumes:
       - odoo-data:/var/lib/odoo
-      - ./addons:/mnt/extra-addons
-
   # watchtower:
   #   image: containrrr/watchtower
   #   container_name: watchtower
