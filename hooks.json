@@ -2,7 +2,7 @@
     {
       "id": "redeploy",
       "execute-command": "/home/admin/devops/redeploy.sh",
-      "command-working-directory": "/home/admin/devops/hooks",
+      "command-working-directory": "/home/admin/devops",
       "response-message": "Redeploying ETDP QA server."
     }
   ]
